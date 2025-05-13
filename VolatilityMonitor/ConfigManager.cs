@@ -14,7 +14,7 @@ public class ConfigManager
 
     private void LoadConfigData()
     {
-        using StreamReader sr = new StreamReader(Path.Combine(DataPath, "data.ini"));
+        using StreamReader sr = new StreamReader(Path.Combine(DataPath, "config.ini"));
         string? line;
         String delimStr = "=";
         char[] delimiter = delimStr.ToCharArray();

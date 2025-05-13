@@ -17,6 +17,8 @@ public class BinanceWebSocketService
     {
         _conditions = conditions;
         _notifier = notifier;
+        _interval = ConfigManager.Get(ConfigKey.CandleInterval);
+        _cooldown = TimeSpan.FromMinutes(int.Parse(ConfigManager.Get(ConfigKey.AlertCooldown)));
     }
 
     public async Task StartAsync(List<string> symbols)

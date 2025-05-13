@@ -14,7 +14,7 @@ var conditions = new List<IAlertCondition>
 };
 // symbols.Clear();
 // symbols.Add("BTCUSDT");
-// var notifier = new TelegramNotifier("YOUR_BOT_TOKEN", "YOUR_CHAT_ID");
+var notifier = new TelegramNotifier(ConfigManager.Get(ConfigKey.TelegramBotToken), ConfigManager.Get(ConfigKey.TelegramChannelId));
 var wsService = new BinanceWebSocketService(conditions, null);
 
 var history = await wsService.LoadCandlesForSymbolsAsync(symbols);

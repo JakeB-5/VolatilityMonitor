@@ -79,13 +79,11 @@ public class BinanceWebSocketService
             if (cond.ShouldAlert(symbol, list, out string reason))
             {
                 _lastAlertTime[symbol] = now;
-                Console.WriteLine($"[{symbol}] Alert\nReason: {reason}");
+                // Console.WriteLine($"[{symbol}] Alert\nReason: {reason}");
                 // list.ForEach(a => Console.WriteLine(a.ToString()));
-
                 // Console.WriteLine($"{list.Take(20).Average(c=>c.Volume)} AVG");
 
-                //_ = _notifier.SendAsync($"[{symbol}] Alert\nReason: {reason}");
-                
+                _ = _notifier.SendAsync($"[{symbol}] Alert\nReason: {reason}");
             }
         }
 
@@ -104,7 +102,7 @@ public class BinanceWebSocketService
                 lock (result)
                 {
                     result[symbol] = candles;
-                    Console.WriteLine($"[{symbol}] Loaded");
+                    // Console.WriteLine($"[{symbol}] Loaded");
                     // candles.ForEach(a => Console.WriteLine(a.ToString()));
                     // Console.WriteLine($"{candles.TakeLast(20).Average(c=>c.Volume)} AVG");
                 }

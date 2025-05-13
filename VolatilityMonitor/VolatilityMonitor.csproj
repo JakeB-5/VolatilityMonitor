@@ -16,5 +16,8 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         <Link>config.ini</Link>
       </Content>
+      <Content Include="..\readme.md">
+        <Link>readme.md</Link>
+      </Content>
     </ItemGroup>
 </Project>
